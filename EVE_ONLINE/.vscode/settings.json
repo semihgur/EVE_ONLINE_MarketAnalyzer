@@ -51,6 +51,32 @@
         "chrono": "cpp",
         "ctime": "cpp",
         "ratio": "cpp",
-        "iomanip": "cpp"
-    }
+        "iomanip": "cpp",
+        "bitset": "cpp",
+        "codecvt": "cpp",
+        "complex": "cpp",
+        "condition_variable": "cpp",
+        "map": "cpp",
+        "optional": "cpp",
+        "mutex": "cpp",
+        "semaphore": "cpp",
+        "shared_mutex": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp",
+        "cfenv": "cpp",
+        "__nullptr": "cpp"
+    },
+    "C_Cpp.default.compilerPath": "/usr/bin/gcc",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/semih/Documents/GitHub/EVE_ONLINE_MarketAnalyzer/EVE_ONLINE",
+            "binaryPath": "/home/semih/Documents/GitHub/EVE_ONLINE_MarketAnalyzer/EVE_ONLINE/jitaOrderSeeker_VolumeUnder300",
+            "binaryArgs": []
+        },
+        {
+            "cwd": "/home/semih/Documents/GitHub/EVE_ONLINE_MarketAnalyzer/EVE_ONLINE",
+            "binaryPath": "/home/semih/Documents/GitHub/EVE_ONLINE_MarketAnalyzer/EVE_ONLINE/evemarketanalyzer",
+            "binaryArgs": []
+        }
+    ]
 }
