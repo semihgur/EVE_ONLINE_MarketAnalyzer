@@ -442,10 +442,14 @@ int main()
             continue;
         }
 
+        //printing response data
+        //std::cout << response_data << std::endl;
+
         int recentVolume = 0;
         int tolarance = 0;
         bool validFlag = false;
         double mjPrice = -1;
+        //making mjPrice2 double limit
         double mjPrice2 = std::numeric_limits<double>::max();
         // Loop through the objects in the JSON array
         // Looping through the last 6 entry
@@ -453,6 +457,10 @@ int main()
         {
             // Get the date string from the object
             const char *dateString = (*itr)["date"].GetString();
+
+            //printing highest
+            //std::cout << "highest: " << (*itr)["highest"].GetDouble() <<" "<<(mjPrice2 > (*itr)["highest"].GetDouble())<< std::endl;
+
             // Convert the date string to a std::tm object
             std::tm objDateTime = {};
             std::istringstream ss(dateString);
@@ -469,7 +477,8 @@ int main()
                 if (mjPrice < (*itr)["lowest"].GetDouble())
                 {
                     mjPrice = (*itr)["lowest"].GetDouble();
-                }else if(mjPrice2 > (*itr)["highest"].GetDouble())
+                }
+                if(mjPrice2 > (*itr)["highest"].GetDouble())
                 {
                     mjPrice2 = (*itr)["highest"].GetDouble();
                 }
@@ -481,7 +490,8 @@ int main()
                 if (mjPrice < (*itr)["lowest"].GetDouble())
                 {
                     mjPrice = (*itr)["lowest"].GetDouble();
-                }else if(mjPrice2 > (*itr)["highest"].GetDouble())
+                }
+                if(mjPrice2 > (*itr)["highest"].GetDouble())
                 {
                     mjPrice2 = (*itr)["highest"].GetDouble();
                 }
@@ -499,6 +509,7 @@ int main()
         }
         // now we have recent volume and mjPrice
         // we need to get the jita price of the item
+        //std::cout << "type_id: " << type_id << " recentVolume: " << recentVolume << " mjPrice: " << formatNumber(mjPrice) << " mjPrice2: " << formatNumber(mjPrice2) << std::endl;
         mjPrice=(mjPrice+mjPrice2)/2;
         Item *item = new Item();
         item->type_id = type_id;
@@ -658,12 +669,18 @@ int main()
     fin.close();
     //playing mp3 file inside resources folder ../res/notification.mp3
     sf::Music music;
-    if (!music.openFromFile("../res/notification.mp3")) {
+    if (!music.openFromFile("../res/Bird making Samsung notification sounds.wav")) {
         // Handle error
         return -1;
     }
 
     music.play();
+    //waiting for music to end
+    while (music.getStatus() == sf::Music::Playing)
+    {
+        // Leave some CPU time for other processes
+        sf::sleep(sf::milliseconds(100));
+    }
     // opening txt file in notepad and closing program
     //system("gedit ./top50.txt");
     return 0;

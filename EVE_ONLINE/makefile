@@ -1,3 +1,4 @@
+
 CXX = g++
 CXXFLAGS = -std=c++11 -Wall -Wextra -Wpedantic
 
@@ -9,7 +10,7 @@ CURL_INCLUDE = -I./lib/curl
 CURL_LIB = -L./lib -lcurl
 
 SFML_INCLUDE = -I./lib/SFML
-SFML_LIB = -L./lib -lsfml-audio
+SFML_LIB = -L./lib -lsfml-audio -lsfml-graphics -lsfml-network -lsfml-system -lsfml-window
 
 # Target executables
 TARGET = evemarketanalyzer jitaOrderSeeker_VolumeUnder300 jita_Item_ID_Getter

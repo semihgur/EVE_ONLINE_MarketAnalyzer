@@ -64,7 +64,9 @@
         "stop_token": "cpp",
         "thread": "cpp",
         "cfenv": "cpp",
-        "__nullptr": "cpp"
+        "__nullptr": "cpp",
+        "set": "cpp",
+        "regex": "cpp"
     },
     "C_Cpp.default.compilerPath": "/usr/bin/gcc",
     "makefile.launchConfigurations": [
