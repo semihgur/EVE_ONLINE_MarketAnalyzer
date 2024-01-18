@@ -6,3 +6,6 @@ In game i was in MJ (pandemic horde) Beanstar so if you want to use this you sho
 To make it work all you have to do is:
   1. going in the executables and run eve online market analyzer
 If you want to fetch updated market Items you should first run jita_Item_ID_Getter after that jitaOrderSeeker_VolumeUnder300. These 2 will prepare the environment for eveOnlineMarketAnalyzer.
+
+sudo apt install libcurl4-openssl-dev
+sudo apt install libsfml-dev
